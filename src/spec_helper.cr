@@ -47,3 +47,13 @@ end
 def be_including(value)
   Generate::SpecHelper::IncludeExpectation.new(value)
 end
+
+macro define_describe_file(dir, run)
+  def describe_file(path, options = {} of Symbol => String)
+    describe "file #{path}" do
+      it "has proper content" do
+        yield(Generate::SpecHelper::DescribedFile.new("{{dir.id}}/#{path}", -> { {{run}} }))
+      end
+    end
+  end
+end
