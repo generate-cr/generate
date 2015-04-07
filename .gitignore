@@ -1,3 +1,4 @@
 .deps/
 .crystal/
 .deps.lock
+/generate.cr

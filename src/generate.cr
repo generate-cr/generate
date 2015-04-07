@@ -6,6 +6,8 @@ module Generate
   def run(args, raw_config = {} of Symbol => String)
     runner = Registry.runner(args.shift)
 
+    raw_config[:logger] ||= "default"
+
     OptionParser.parse(args) do |opts|
       opts.on("--logger=LOGGER", "Logger to use, one of: #{Registry.loggers.inspect}") do |logger|
         raw_config[:logger] = logger
