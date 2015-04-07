@@ -1,16 +1,10 @@
-macro generate_abstract_def(signature)
-  def {{signature.id}}
-    fail "Abstract method \#{{signature.id}} called on #{self.class}"
-  end
-end
-
 module Generate
   struct View
     property config
     property logger
 
-    generate_abstract_def render
-    generate_abstract_def log
+    abstract def render
+    abstract def log
 
     def initialize(@config, @logger)
     end
@@ -22,9 +16,9 @@ module Generate
   end
 
   struct FileView < View
-    generate_abstract_def path
-    generate_abstract_def to_s(io)
-    generate_abstract_def full_path
+    abstract def path
+    abstract def to_s(io)
+    abstract def full_path
 
     def render
       File.write(full_path, to_s)
