@@ -17,4 +17,8 @@ module Generate
     final_config = raw_config.merge(runner.default_config.merge(runner.raw_config))
     runner.build(final_config).run
   end
+
+  def run!
+    run(ARGV)
+  end
 end
