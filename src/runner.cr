@@ -2,7 +2,7 @@ require "./view"
 require "./registry"
 
 module Generate
-  struct Runner
+  class Runner
     property raw_config
 
     # @abstract with default implementation
@@ -28,5 +28,11 @@ module Generate
     def logger
       Registry.logger(raw_config[:logger])
     end
+  end
+
+  class RunnerFactory
+    abstract def parse_opts(opts)
+    abstract def build(raw_config)
+    abstract def default_config
   end
 end
