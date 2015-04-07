@@ -19,7 +19,7 @@ module Generate
 
     def run
       views.each do |view|
-        view.new(config).render
+        view.new(config, logger).render_with_log
       end
       true
     end
