@@ -1,2 +1,3 @@
 deps do
+  github "generate-cr/library.template"
 end
