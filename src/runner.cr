@@ -5,8 +5,9 @@ module Generate
   struct Runner
     property raw_config
 
-    # @abstract
+    # @abstract with default implementation
     def config
+      raw_config
     end
 
     # @abstract
