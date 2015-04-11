@@ -4,7 +4,19 @@ Generic tool for generating whole Crystal project structure, or any part of it d
 
 ## Installation
 
-TODO: Come up with minimal way to install this tool (probably `curl .. | bash`)
+Add it to your Projectfile:
+
+```crystal
+deps do
+  github "generate-cr/generate"
+end
+```
+
+Initialize Generatefile and add binstub:
+
+```
+curl https://github.com/generate-cr/generate/master/scripts/install.sh | bash
+```
 
 ## Usage
 
