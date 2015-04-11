@@ -1,0 +1,1 @@
+template "library.template/generate/library", "generate-cr/library.template"

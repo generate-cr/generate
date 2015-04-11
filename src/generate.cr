@@ -13,6 +13,11 @@ module Generate
         raw_config[:logger] = logger
       end
 
+      opts.on("--help", "Show this help") do
+        puts opts
+        exit
+      end
+
       runner.parse_opts(opts)
     end
 

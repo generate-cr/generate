@@ -1,3 +1,5 @@
+require "ecr/macros"
+
 module Generate
   struct View
     property config
@@ -30,9 +32,9 @@ module Generate
   end
 end
 
-macro generate_template(name, base, template, path)
+macro generate_template(name, base, source_lib, template, path)
   struct {{name.id}} < {{base.id}}
-    ecr_file "{{__DIR__.id}}/{{template.id}}"
+    ecr_file "./libs/{{source_lib.id}}/template/{{template.id}}"
 
     def path
       {{path}}

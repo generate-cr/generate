@@ -1,0 +1,7 @@
+require "generate"
+
+<% config.contents.deps.each do |dep| %>
+require "<%= dep.name %>"
+<% end %>
+
+Generate.run(<%= config.argv.inspect %>)

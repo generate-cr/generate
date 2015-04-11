@@ -1,0 +1,7 @@
+deps do
+  github "generate-cr/generate"
+
+<% config.contents.deps.each do |dep| %>
+  github "<%= dep.github %>"
+<% end %>
+end
