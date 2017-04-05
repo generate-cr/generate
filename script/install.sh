@@ -6,6 +6,7 @@ cd $HOME/.generate-cr
 
 echo 'deps { github "generate-cr/generate" }' > Projectfile
 
+shards init
 crystal deps
 
 echo 'template "library.template/generate/library", "generate-cr/library.template"' > Generatefile
